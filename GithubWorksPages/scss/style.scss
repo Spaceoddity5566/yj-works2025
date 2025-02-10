@@ -1,0 +1,268 @@
+@import "variables";
+@import "navbar";
+@import "footer";
+
+//定義變數
+$main-color01: #004a18;
+$main-color02: #d1d2cd;
+$bg-color-w: #fff;
+
+body {
+  font-family: "noto sans tc", serif;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+a {
+  color: inherit;
+}
+
+.main-color01 {
+  color: $main-color01;
+}
+.main-color02 {
+  color: $main-color02;
+}
+
+.bg-color-w {
+  background: #fff;
+}
+
+.fs-7 {
+  font-size: 0.75rem;
+}
+.fs-6rem {
+  font-size: 6rem;
+}
+.fs-8rem {
+  font-size: 8rem;
+}
+
+.fw-900 {
+  font-weight: 900;
+}
+
+.navbar {
+  background-color: $main-color02;
+  border-radius: 0 0 8px 8px;
+  // box-shadow: rgba(0, 0, 0, 0.15) 0px 8px 16px;
+  .nav-avatar{
+    height: 48px;
+    width: 48px;
+  }
+}
+
+.portfolio-bg {
+  background-color: $main-color02;
+}
+
+.top-bar-style {
+  a {
+    &:hover {
+      font-weight: bolder;
+      color: #004a18;
+    }
+  }
+}
+
+.intro-hashtag {
+  font-size: 2.25rem;
+}
+
+.intro-mail {
+  .mail-bg {
+    background: $main-color02;
+    position: relative;
+    color: #000;
+    font-size: 3rem;
+    text-decoration: none;
+    border: #000 solid 1px;
+    padding: 10px;
+    overflow: hidden;
+    z-index: 0;
+    &::after {
+      content: "";
+      position: absolute;
+      left: -100%;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      background: #004a18;
+      transition: left 0.3s ease-in-out;
+      z-index: -1;
+    }
+
+    &:hover {
+      color: #fff;
+    }
+
+    &:hover::after {
+      left: 0;
+    }
+  }
+}
+
+.web-card {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  border: 1.5px #000 solid;
+  .web-card-text {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+}
+
+.web-card02 {
+  border: 1.5px #000 solid;
+}
+
+.image-button {
+  background-size: cover;
+  filter: brightness(90%); /* 亮度調整 */
+  background-position: center;
+  height: 100px;
+  border: none;
+  color: #ffffff;
+  text-align: center;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+  position: relative; /* 使子元素可以絕對定位 */
+  &:hover {
+    filter: brightness(80%); /* 亮度調整 */
+    color: #fff;
+  }
+  .image-btn-text {
+    &:hover {
+      border: 1px solid #fff;
+      border-radius: 8px;
+      color: #fff;
+    }
+  }
+}
+
+.copywrite-modal {
+  background-color: $main-color02;
+}
+
+.more-link {
+  
+  .more-bg {
+    background: $main-color02;
+    position: relative;
+    color: #000;
+    font-size: 3rem;
+    text-decoration: none;
+    border-radius: 8px;
+    padding: 14px;
+    overflow: hidden;
+    z-index: 0;
+    &::after {
+      content: "";
+      position: absolute;
+      left: -100%;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      background: #004a18;
+      transition: left 0.3s ease-in-out;
+      z-index: -1;
+    }
+
+    &:hover {
+      color: #fff;
+    }
+
+    &:hover::after {
+      left: 0;
+    }
+  }
+
+  text-decoration: none;
+
+}
+
+.service-btn {
+  background: $main-color02;
+  position: relative;
+  color: #000;
+  font-size: 1.5rem;
+  text-decoration: none;
+  border: #000 solid 1px;
+  padding: 10px;
+  overflow: hidden;
+  z-index: 0;
+  &::after {
+    content: "";
+    position: absolute;
+    left: -100%;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background: $main-color01;
+    transition: left 0.3s ease-in-out;
+    z-index: -1;
+  }
+
+  &:hover {
+    color: #fff;
+  }
+
+  &:hover::after {
+    left: 0;
+  }
+}
+
+.service-img {
+  height: 200px; /* 固定容器高度 */
+  overflow: hidden; /* 隱藏超出的部分 */
+}
+
+.img-fixed-height {
+  height: 100%; /* 設置圖片高度為容器高度 */
+  object-fit: cover; /* 圖片適應容器 */
+}
+
+.add-btn {
+  background-color: #004a18;
+  color: #fff;
+  box-shadow: 0 3px #000, 3px 0 #000; /* 模擬邊框 */
+  border-radius: 8px;
+  transition: left 0.3s ease-in-out;
+  &:hover {
+    box-shadow: 0 1px #000, 1px 0 #000; /* 模擬按下效果 */
+    transform: translate(2px, 2px); /* 使按鈕稍微向右下移動 */
+  }
+}
+
+.contact-border {
+  border-right: 1px solid #000;
+  @media (max-width: 768px) {
+    border-right: none;
+  }
+}
+
+.other-link {
+  a {
+    &:hover {
+      background-color: $main-color01;
+      color: #fff;
+    }
+  }
+}
+
+.highlight {
+  animation: highlight-animation 2.5s ease-in-out;
+}
+
+@keyframes highlight-animation {
+  0% {
+    background-color: rgb(10, 255, 80);
+  }
+  100% {
+    background-color: transparent;
+  }
+}
